@@ -46,6 +46,17 @@ fn main() {
     }
     println!("End count: {count}");
 
+    // while loop
+    let mut lambda = 3;
+    while lambda != 0 {
+        println!("Lambda: {lambda}");
+        lambda -= 1;
+    }
+    println!("Ready. Lambda: {lambda}");
+
+    loop_arr();
+
+    numbers_reverse();
 }
 
 // another function, convention: snake case "_".
@@ -57,4 +68,27 @@ fn foo_func(x: i32, unit: char) {
 // return an u32 value, can delete return and put the result without semicolon (implicitily).
 fn sum_val(x: u32, y: u32) -> u32 {
     return x + y;
+}
+
+// two methods for loop inside an array.
+fn loop_arr() {
+    let arr:[u32;5] = [1, 2, 3, 4, 5];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("Arr value: {}", arr[index]);
+        index += 1;
+    }
+
+    for element in arr {
+        println!("Element: {element}")
+    }
+}
+
+// method for looping numbers from n to n-k, using .rev() method.
+fn numbers_reverse() {
+    for num in (1..4).rev() {
+        println!("Number: {num}");
+    };
+    println!("Finish.");
 }
